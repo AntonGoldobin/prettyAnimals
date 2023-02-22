@@ -1,15 +1,25 @@
 import * as cron from 'node-schedule'
-import { unsplashClick } from './unsplash-click'
-import { UnsplashConfig } from '../bots/golden-antelope'
+import { Config } from '../types/types'
+import axios from 'axios'
 
-export const unsplashSchedule = (config: UnsplashConfig) => {
-	let scheduleIndex = 0
-
+export const schedule = (config: Config) => {
 	cron.scheduleJob(config.cron, () => {
-		console.log('iteration has been started')
-		if(config.scheduleRepeats === "all" || scheduleIndex < config.scheduleRepeats) {
-			unsplashClick(config.themes[scheduleIndex % config.themes.length])
-		}
-		scheduleIndex++
+		axios
+			.post(`http://${process.env.SHORTS_SERVER}/youtube-shorts`, config)
+			.then((res) => {
+				console.log('post request has been sended')
+			})
+			.catch((err) => console.log(err))
 	})
 }
+
+//Instant post with no schedule
+
+// export const schedule = (config: Config) => {
+// 	axios
+// 		.post('http://localhost:3000/youtube-shorts', config)
+// 		.then((res) => {
+// 			console.log('post request has been sended')
+// 		})
+// 		.catch((err) => console.log(err))
+// }

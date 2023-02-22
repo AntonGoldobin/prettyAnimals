@@ -4,8 +4,7 @@ import * as dotenv from 'dotenv'
 import * as path from 'path'
 import cookieParser from 'cookie-parser'
 import logger from 'morgan'
-import { goldenAntelope } from './bots/golden-antelope'
-import  * as pug  from 'pug'
+import { prettyAnimals } from './bots/prettyAnimals'
 
 import {router as indexRouter } from './routes/index'
 
@@ -48,9 +47,9 @@ app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
 })
 
 app.listen(port, () => {
-	console.log(`Unsplash Like is listening on port ${port}`)
+	console.log(`Pretty Animals is listening on port ${port}`)
 })
 
-goldenAntelope()
+prettyAnimals()
 
 module.exports = app
