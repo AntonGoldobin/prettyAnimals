@@ -3,6 +3,7 @@ import { Config } from '../types/types'
 import axios from 'axios'
 
 export const schedule = (config: Config) => {
+	console.log('schedule has been started')
 	cron.scheduleJob(config.cron, () => {
 		axios
 			.post(`http://${process.env.SHORTS_SERVER}/youtube-shorts`, config)
@@ -15,11 +16,12 @@ export const schedule = (config: Config) => {
 
 //Instant post with no schedule
 
-// export const schedule = (config: Config) => {
-// 	axios
-// 		.post('http://localhost:3000/youtube-shorts', config)
-// 		.then((res) => {
-// 			console.log('post request has been sended')
-// 		})
-// 		.catch((err) => console.log(err))
-// }
+export const scheduleOnce = (config: Config) => {
+	console.log('schedule runs only once and immediately')
+	axios
+		.post('http://localhost:3000/youtube-shorts', config)
+		.then((res) => {
+			console.log('post request has been sended')
+		})
+		.catch((err) => console.log(err))
+}

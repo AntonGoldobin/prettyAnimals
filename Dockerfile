@@ -1,6 +1,6 @@
 FROM node:16
 ENV NODE_ENV=production
-ENV NODE_PORT=8000
+ENV NODE_PORT=3002
 # Create app directory
 WORKDIR /usr/src/app
 

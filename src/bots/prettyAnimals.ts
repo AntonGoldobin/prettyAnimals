@@ -1,5 +1,5 @@
 import { Config } from '../types/types'
-import { schedule } from '../modules/schedule'
+import { schedule, scheduleOnce } from '../modules/schedule'
 
 import categoryIds from './youtube-categories'
 
@@ -40,5 +40,5 @@ export const prettyAnimals = () => {
 		isAdult: false,
 	}
 
-	schedule(config)
+	process.env.SCHEDULE === "true" ? schedule(config) : scheduleOnce(config)
 }
