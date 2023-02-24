@@ -6,7 +6,7 @@ export const schedule = (config: Config) => {
 	console.log('schedule has been started')
 	cron.scheduleJob(config.cron, () => {
 		axios
-			.post(`http://${process.env.SHORTS_SERVER}/youtube-shorts`, config)
+			.post(`${process.env.SHORTS_SERVER}/youtube-shorts`, config)
 			.then((res) => {
 				console.log('post request has been sended')
 			})
@@ -19,7 +19,7 @@ export const schedule = (config: Config) => {
 export const scheduleOnce = (config: Config) => {
 	console.log('schedule runs only once and immediately')
 	axios
-		.post('http://localhost:3000/youtube-shorts', config)
+		.post(`${process.env.SHORTS_SERVER}/youtube-shorts`, config)
 		.then((res) => {
 			console.log('post request has been sended')
 		})
