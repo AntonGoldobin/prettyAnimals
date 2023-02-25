@@ -13,7 +13,7 @@ export const prettyAnimals = () => {
 		//Youtube configs
 		youtubeLoginToken: JSON.parse(process.env.YOUTUBE_LOGIN_TOKEN),
 		youtubeSecret: JSON.parse(process.env.YOUTUBE_SECRET),
-		youtubeVideoTitle: 'Video I found on TikTok #shorts',
+		youtubeVideoTitle: 'Fynny animals I found on TikTok #shorts',
 		youtubeVideoDescription:
 			'Subscribe and watch the newest shorts founded by the Ant',
 		youtubeVideoTags: [
