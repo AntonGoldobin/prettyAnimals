@@ -18,4 +18,6 @@ export interface Config {
 
 	scheduleRepeats: number | 'all'
 	cron: string
+
+	thumbnailLogo: string
 }

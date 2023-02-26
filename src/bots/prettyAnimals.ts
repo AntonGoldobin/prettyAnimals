@@ -2,6 +2,7 @@ import { Config } from '../types/types'
 import { schedule, scheduleOnce } from '../modules/schedule'
 
 import categoryIds from './youtube-categories'
+import { getBase64ThumbnailLogo } from './utils'
 
 export const prettyAnimals = () => {
 	const config: Config = {
@@ -38,6 +39,7 @@ export const prettyAnimals = () => {
 		snoowrapToken: process.env.AVOCADO_SNOOWRAP_REFRESH_TOKEN,
 		redditPostLimit: 20,
 		isAdult: false,
+		thumbnailLogo: getBase64ThumbnailLogo()
 	}
 
 	process.env.SCHEDULE === "true" ? schedule(config) : scheduleOnce(config)

@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "copy-assets": "cp -R src/web lib/",
+    "copy-assets": "cp -R src/web lib/ && cp -R src/bots/files lib/bots/",
     "dev": "ts-node src/app.ts",
     "start": "npm run build && ts-node lib/app.js",
     "build": "tsc -p . && npm run copy-assets"
