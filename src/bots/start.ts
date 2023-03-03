@@ -4,7 +4,7 @@ import { schedule, scheduleOnce } from '../modules/schedule'
 import categoryIds from './youtube-categories'
 import { getBase64ThumbnailLogo } from './utils'
 
-export const prettyAnimals = () => {
+export const start = () => {
 	const config: Config = {
 		scheduleRepeats: "all",
 		cron: '0 */11 * * *',
@@ -14,7 +14,7 @@ export const prettyAnimals = () => {
 		//Youtube configs
 		youtubeLoginToken: JSON.parse(process.env.YOUTUBE_LOGIN_TOKEN),
 		youtubeSecret: JSON.parse(process.env.YOUTUBE_SECRET),
-		youtubeVideoTitle: 'Fynny animals I found on TikTok #shorts',
+		youtubeVideoTitle: 'Funny animals I found on TikTok #shorts',
 		youtubeVideoDescription:
 			'Subscribe and watch the newest shorts founded by the Ant',
 		youtubeVideoTags: [
@@ -37,7 +37,7 @@ export const prettyAnimals = () => {
 		snoowrapClientId: process.env.AVOCADO_SNOOWRAP_CLIENT_ID,
 		snoowrapSecret: process.env.AVOCADO_SNOOWRAP_CLIENT_SECRET,
 		snoowrapToken: process.env.AVOCADO_SNOOWRAP_REFRESH_TOKEN,
-		redditPostLimit: 20,
+		redditPostLimit: 100,
 		isAdult: false,
 		thumbnailLogo: getBase64ThumbnailLogo()
 	}
