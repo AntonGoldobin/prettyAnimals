@@ -39,7 +39,9 @@ export const start = () => {
 		snoowrapToken: process.env.AVOCADO_SNOOWRAP_REFRESH_TOKEN,
 		redditPostLimit: 100,
 		isAdult: false,
-		thumbnailLogo: getBase64ThumbnailLogo()
+		thumbnailLogo: getBase64ThumbnailLogo(),
+
+		uploadCount: 2,
 	}
 
 	process.env.SCHEDULE === "true" ? schedule(config) : scheduleOnce(config)
