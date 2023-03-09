@@ -41,7 +41,7 @@ export const start = () => {
 		isAdult: false,
 		thumbnailLogo: getBase64ThumbnailLogo(),
 
-		uploadCount: 2,
+		uploadCount: 1,
 	}
 
 	process.env.SCHEDULE === "true" ? schedule(config) : scheduleOnce(config)
